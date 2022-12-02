@@ -24,14 +24,18 @@ int main()
 
 	ScheduleKey(key, expansionkey, 4, 10);	//1、密钥扩展生成
 //	send(fd, key, strlen(key), 0);
-
+	//printf("KEY = \n");
+	//for (int i = 0; i < 15; i++)
+	//{
+	//	printf("0x%X ", (int)(expansionkey+16*i));
+	//}
+	//system("pause");
 	char recvBuff[1024];
 	while (1) {
 		char sendBuff[1024];
 		memset(sendBuff, 0, sizeof(sendBuff));
 		printf("Please input:\n");
 		scanf("%s", sendBuff);
-
 
 		AesEncrypt(sendBuff, expansionkey, 10);		//AES 加密
 	//	memcpy(sendBuff, pt, sizeof(sendBuff));
