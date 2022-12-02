@@ -11,14 +11,14 @@ int main()
 	init_Socket();
 
 	SOCKET fd = create_clientSocket("127.0.0.1");
-	printf("coonet server successed..\n");
+	printf("connet server successed..\n");
 
 //	printf("Please input key:\n");
 //	scanf("%s", key);
 	printf("The key is:");
 	for (int i = 0; i < 8; i++)
 	{
-		printf("%d ", key[i]);
+		printf("%d", key[i]);
 	}
 	printf("\n");
 //	send(fd, key, strlen(key), 0);

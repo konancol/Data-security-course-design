@@ -24,7 +24,7 @@ int main()
 	printf("The key is:");
 	for (int i = 0; i < 8; i++)
 	{
-		printf("%d ", key[i]);
+		printf("%d", key[i]);
 	}
 	printf("\n");
 /*
