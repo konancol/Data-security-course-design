@@ -4,7 +4,7 @@
 
 int main()
 {
-	unsigned char pt[17];
+//	unsigned char pt[17];
 	unsigned char expansionkey[15 * 16];
 	int key[8] = {2,0,0,2,1,0,1,1};
 
@@ -21,6 +21,8 @@ int main()
 		printf("%d", key[i]);
 	}
 	printf("\n");
+
+	ScheduleKey(key, expansionkey, 4, 10);	//1、密钥扩展生成
 //	send(fd, key, strlen(key), 0);
 
 	char recvBuff[1024];
@@ -30,8 +32,8 @@ int main()
 		printf("Please input:\n");
 		scanf("%s", sendBuff);
 
-		ScheduleKey(key, expansionkey, 4, 10);	//1、密钥扩展生成
-		AesEncrypt(sendBuff, expansionkey, 10);		//2、AES 加密
+
+		AesEncrypt(sendBuff, expansionkey, 10);		//AES 加密
 	//	memcpy(sendBuff, pt, sizeof(sendBuff));
 		send(fd, sendBuff, strlen(sendBuff), 0);
 

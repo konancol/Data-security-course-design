@@ -270,10 +270,6 @@ void ScheduleKey(unsigned char* inkey, unsigned char* outkey, int Nk, int Nr)
 	}
 }
 
-void Initialize()
-{
-	
-}
 
 //
 //int main(void) {

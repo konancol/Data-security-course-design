@@ -5,7 +5,7 @@
 
 int main()
 {
-	unsigned char pt[17];
+//	unsigned char pt[17];
 	int key[8] = {2,0,0,2,1,0,1,1};
 	unsigned char expansionkey[15 * 16];
 
@@ -27,6 +27,7 @@ int main()
 		printf("%d", key[i]);
 	}
 	printf("\n");
+	ScheduleKey(key, expansionkey, 4, 10);	//1、密钥扩展生成
 /*
 	SOCKADDR_IN clientAddr;
 	int len = sizeof(clientAddr);
@@ -35,7 +36,6 @@ int main()
 	char recvBuff[1024];
 	while (1) {
 		memset(recvBuff, 0, sizeof(recvBuff));
-		ScheduleKey(key, expansionkey, 4, 10);	//1、密钥扩展生成
 		recv(clifd, recvBuff, sizeof(recvBuff) - 1, 0);
 		Contrary_AesEncrypt(recvBuff, expansionkey, 10);//AES 解密
 		printf("receive message: %s\n", recvBuff);
@@ -45,7 +45,7 @@ int main()
 		printf("Please input:\n");
 		scanf("%s", sendBuff);
 		
-		AesEncrypt(sendBuff, expansionkey, 10);		//2、AES 加密
+		AesEncrypt(sendBuff, expansionkey, 10);		//AES 加密
 		send(clifd,sendBuff,strlen(sendBuff),0);
 	}
 
